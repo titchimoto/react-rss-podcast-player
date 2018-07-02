@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
+
+// import icons
+import { FaAngleDoubleLeft,
+         FaAngleDoubleRight,
+         FaPause,
+         FaPlay 
+       } from 'react-icons/lib/fa';
+
 import './styles.css';
+
 
 class PlayerControls extends Component {
   render() {
@@ -31,11 +40,11 @@ class PlayerControls extends Component {
 
         {/* Play, Pause and Skip buttons */}
         <div className="buttons">
-          <i className="fas fa-angle-double-left skip-back" onClick={this.props.handleSkipBackwards15Seconds}></i>
+          <FaAngleDoubleLeft className="skip-back" onClick={this.props.handleSkipBackwards15Seconds}/>
           <button className="play-pause" onClick={ () => this.props.handleEpisodeClick(this.props.currentEpisode) } >
-            <i className={this.props.isPlaying ? "fas fa-pause pause-button" : "fas fa-play play-button"}></i>
+            {this.props.isPlaying ? <div><FaPause className="pause-button" size={30} /></div> : <div><FaPlay className="play-button" /></div>}
           </button>
-          <i className="fas fa-angle-double-right skip-forward" onClick={this.props.handleSkipForward15Seconds}></i>
+          <FaAngleDoubleRight className="skip-forward" onClick={this.props.handleSkipForward15Seconds} />
         </div>
 
         {/* Volume bar */}

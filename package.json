@@ -7,11 +7,12 @@
     "react": "^15.5.4"
   },
   "dependencies": {
+    "extract-text-webpack-plugin": "^3.0.2",
     "moment": "^2.22.2",
     "react": "^15.5.4",
+    "react-icons": "^2.2.7",
     "rss-parser": "^3.4.2",
-    "webpack": "^3.4.1",
-    "extract-text-webpack-plugin": "^3.0.2"
+    "webpack": "^3.4.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

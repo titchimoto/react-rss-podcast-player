@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 // import Components
 import FeedItem from './FeedItem';
 import PlayerControls from './PlayerControls';
-// import Spinner from './common/Spinner';
+
+
+
 
 import './styles.css';
 
@@ -23,7 +25,6 @@ class Player extends Component {
       currentTime: 0,
       currentEpisodeDuration: 0,
       currentEpisodeDescription: '',
-      currentPage: 1
     };
     this.audioElement = document.createElement('audio');
     this.rssParser = new RSSParser();
@@ -31,7 +32,6 @@ class Player extends Component {
 
   componentWillMount() {
     this.fetchDataFromRssFeed(this.props.url);
-
   }
 
   play() {
@@ -146,6 +146,25 @@ class Player extends Component {
   }
 
   render() {
+    const mainStyles = {
+      'max-width': this.props.maxWidth,
+
+    }
+
+    const playerStyles = {
+      color: this.props.playerTextColor,
+      'background-color': this.props.playerColor
+
+    }
+
+    const feedStyles = {
+      'max-height': this.props.feedMaxHeight,
+      'background-color': this.props.feedColor,
+      'color': this.props.feedTextColor
+
+
+    }
+
     const allEpisodes = this.state.allEpisodes.map((podcast) => {
       return <FeedItem
                 key={podcast.guid}
@@ -163,9 +182,7 @@ class Player extends Component {
       emptyPlayer = (
         <div className="player-top-section">
           <div className="empty-player">
-            <i className="fas fa-question question-mark"></i>
-            <div className="podcast-title empty-player">What do you want to listen to today?</div>
-            <small>(Use the search bar to get started...)</small>
+            <div className="podcast-title empty-player">No media found. Enter an RSS feed to get started.</div>
           </div>
         </div>
       );
@@ -184,15 +201,15 @@ class Player extends Component {
     }
 
     return (
-      <div className="main">
+      <div className="main" style={mainStyles}>
 
-        <div className="player-container">
+        <div className="player-container" style={playerStyles}>
           <section className="player">
             {/*}{this.state.isLoading ? <Spinner /> : emptyPlayer}*/}
             {emptyPlayer}
 
 
-            <div className="player-controls-section">
+            <div className="player-controls-section" style={{'background-color': this.props.playerControlsColor}}>
               <PlayerControls
                 isPlaying={this.state.isPlaying}
                 currentEpisode={this.state.currentEpisode}
@@ -217,7 +234,7 @@ class Player extends Component {
         </div>
 
         <div className="feed-container">
-          <section className="feed-section">
+          <section className="feed-section" style={feedStyles}>
             {allEpisodes}
           </section>
         </div>

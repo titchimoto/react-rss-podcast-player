@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+
+// import icons
+import { FaPlayCircleO, FaPauseCircleO } from 'react-icons/lib/fa';
+
 import './styles.css';
 
 class FeedItem extends Component {
@@ -23,9 +27,9 @@ class FeedItem extends Component {
     // Render play or pause button depending on player conditions
     let playOrPause = ''
     if(this.props.currentEpisode && this.props.isPlaying) {
-      playOrPause = <i className="far fa-pause-circle item-pause"></i>
+      playOrPause = <FaPauseCircleO className="item-pause" />
     } else if (this.state.hover && !this.props.currenEpisode) {
-      playOrPause = <i className="far fa-play-circle item-play"></i>
+      playOrPause = <FaPlayCircleO className="item-play" />
     }
 
     return (
