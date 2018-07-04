@@ -125,7 +125,7 @@
 }
 
 .play-button {
-  font-size: 2.2rem;
+  font-size: 4rem;
   grid-column-start: 1;
   grid-row-start: 3;
   align-self: center;
@@ -133,7 +133,7 @@
 }
 
 .pause-button {
-  font-size: 2.2rem;
+  font-size: 4rem;
   grid-column-start: 1;
   grid-row-start: 3;
   align-self: center;
@@ -142,7 +142,7 @@
 
 .skip-back {
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   grid-row-start: 3;
   grid-column-start: 1;
 
@@ -150,7 +150,7 @@
 
 .skip-forward {
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   grid-row-start: 3;
   grid-column-start: 1;
 
@@ -291,8 +291,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .podcast-image img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 
 
@@ -340,12 +340,12 @@ li {
 
 .item-play {
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
 }
 
 .item-pause {
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
 }
 
 .item-play:hover {

@@ -4,8 +4,14 @@ import React, { Component } from 'react';
 import { FaAngleDoubleLeft,
          FaAngleDoubleRight,
          FaPause,
-         FaPlay 
+         FaPlay
        } from 'react-icons/lib/fa';
+
+import { TiMediaPlay,
+         TiMediaPause,
+         TiMediaFastForward,
+         TiMediaRewind
+        } from 'react-icons/lib/ti';
 
 import './styles.css';
 
@@ -40,11 +46,11 @@ class PlayerControls extends Component {
 
         {/* Play, Pause and Skip buttons */}
         <div className="buttons">
-          <FaAngleDoubleLeft className="skip-back" onClick={this.props.handleSkipBackwards15Seconds}/>
+          <TiMediaRewind className="skip-back" onClick={this.props.handleSkipBackwards15Seconds}/>
           <button className="play-pause" onClick={ () => this.props.handleEpisodeClick(this.props.currentEpisode) } >
-            {this.props.isPlaying ? <div><FaPause className="pause-button" size={30} /></div> : <div><FaPlay className="play-button" /></div>}
+            {this.props.isPlaying ? <div><TiMediaPause className="pause-button" /></div> : <div><TiMediaPlay className="play-button" /></div>}
           </button>
-          <FaAngleDoubleRight className="skip-forward" onClick={this.props.handleSkipForward15Seconds} />
+          <TiMediaFastForward className="skip-forward" onClick={this.props.handleSkipForward15Seconds} />
         </div>
 
         {/* Volume bar */}
