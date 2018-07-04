@@ -4,9 +4,6 @@ import React, { Component } from 'react';
 import FeedItem from './FeedItem';
 import PlayerControls from './PlayerControls';
 
-
-
-
 import './styles/styles.css';
 
 // Instantiate RSS-Parser to convert RSS feeds into JSON.

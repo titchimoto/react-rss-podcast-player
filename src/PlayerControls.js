@@ -13,7 +13,7 @@ import { TiMediaPlay,
          TiMediaRewind
         } from 'react-icons/lib/ti';
 
-import './styles.css';
+import './styles/styles.css';
 
 
 class PlayerControls extends Component {

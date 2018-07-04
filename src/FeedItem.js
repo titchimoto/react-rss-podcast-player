@@ -6,7 +6,7 @@ import { FaPlayCircleO, FaPauseCircleO } from 'react-icons/lib/fa';
 
 import { TiMediaPlay, TiMediaPause } from 'react-icons/lib/ti';
 
-import './styles.css';
+import './styles/styles.css';
 
 class FeedItem extends Component {
   constructor(props) {
