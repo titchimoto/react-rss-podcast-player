@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 
 // import icons
-import { FaAngleDoubleLeft,
-         FaAngleDoubleRight,
-         FaPause,
-         FaPlay
-       } from 'react-icons/lib/fa';
-
 import { TiMediaPlay,
          TiMediaPause,
          TiMediaFastForward,

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import moment from 'moment';
 
 // import icons
-import { FaPlayCircleO, FaPauseCircleO } from 'react-icons/lib/fa';
-
 import { TiMediaPlay, TiMediaPause } from 'react-icons/lib/ti';
 
 import './styles/styles.css';

@@ -108,7 +108,7 @@ class Player extends Component {
       });
       this.setState({ isLoading: false });
       this.audioElement.src = this.state.currentEpisode.enclosure.url;
-    })();
+    })().catch(alert);
   }
 
   formatTime(time) {
@@ -144,23 +144,19 @@ class Player extends Component {
 
   render() {
     const mainStyles = {
-      'max-width': this.props.maxWidth,
-
-    }
+      maxWidth: this.props.maxWidth,
+    };
 
     const playerStyles = {
       color: this.props.playerTextColor,
-      'background-color': this.props.playerColor
-
-    }
+      backgroundColor: this.props.playerColor
+    };
 
     const feedStyles = {
-      'max-height': this.props.feedMaxHeight,
-      'background-color': this.props.feedColor,
-      'color': this.props.feedTextColor
-
-
-    }
+      maxHeight: this.props.feedMaxHeight,
+      backgroundColor: this.props.feedColor,
+      color: this.props.feedTextColor
+    };
 
     const allEpisodes = this.state.allEpisodes.map((podcast) => {
       return <FeedItem
@@ -179,7 +175,7 @@ class Player extends Component {
       emptyPlayer = (
         <div className="player-top-section">
           <div className="empty-player">
-            <div className="podcast-title empty-player">No media found. Enter an RSS feed to get started.</div>
+            <div className="podcast-title empty-player empty-player-message">No media found. Enter an RSS feed to get started.</div>
           </div>
         </div>
       );
@@ -206,7 +202,7 @@ class Player extends Component {
             {emptyPlayer}
 
 
-            <div className="player-controls-section" style={{'background-color': this.props.playerControlsColor}}>
+            <div className="player-controls-section" style={{'backgroundColor': this.props.playerControlsColor}}>
               <PlayerControls
                 isPlaying={this.state.isPlaying}
                 currentEpisode={this.state.currentEpisode}
