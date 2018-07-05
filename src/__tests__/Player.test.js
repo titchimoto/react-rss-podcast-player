@@ -1,6 +1,5 @@
 import React from 'react';
 import Player from '../Player';
-import PlayerControls from '../PlayerControls';
 import { shallow, mount } from 'enzyme';
 
 describe('Empty Player Component', () => {
