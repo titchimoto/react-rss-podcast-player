@@ -201,7 +201,6 @@ class Player extends Component {
             {/*}{this.state.isLoading ? <Spinner /> : emptyPlayer}*/}
             {emptyPlayer}
 
-
             <div className="player-controls-section" style={{'backgroundColor': this.props.playerControlsColor}}>
               <PlayerControls
                 isPlaying={this.state.isPlaying}
